@@ -1,0 +1,54 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024230902",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "stade",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "level",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Stade",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "classification",
+      "otherEntityRelationshipName": "stade",
+      "relationshipName": "classification",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "image",
+      "otherEntityRelationshipName": "stade",
+      "relationshipName": "image",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "stade",
+      "relationshipName": "patient",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "maladie",
+      "otherEntityRelationshipName": "stade",
+      "relationshipName": "maladie",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

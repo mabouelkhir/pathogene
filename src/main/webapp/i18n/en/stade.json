@@ -1,0 +1,30 @@
+{
+  "pathogeneApp": {
+    "stade": {
+      "home": {
+        "title": "Stages",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Stage",
+        "createOrEditLabel": "Create or edit a Stage",
+        "notFound": "No Stages found"
+      },
+      "created": "A new Stage is created with identifier {{ param }}",
+      "updated": "A Stage is updated with identifier {{ param }}",
+      "deleted": "A Stage is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stage {{ id }}?"
+      },
+      "detail": {
+        "title": "Stage"
+      },
+      "id": "ID",
+      "code": "Code",
+      "level": "Level",
+      "description": "Description",
+      "classification": "Classification",
+      "image": "Image",
+      "patient": "Patient",
+      "maladie": "Disease"
+    }
+  }
+}

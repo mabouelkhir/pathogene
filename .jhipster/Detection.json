@@ -1,0 +1,62 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024230855",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "detection",
+  "fields": [
+    {
+      "fieldName": "photo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "validation",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "stade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Detection",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "visite",
+      "otherEntityRelationshipName": "detection",
+      "ownerSide": false,
+      "relationshipName": "visite",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "maladie",
+      "otherEntityRelationshipName": "detection",
+      "relationshipName": "maladie",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "detection",
+      "relationshipName": "patient",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

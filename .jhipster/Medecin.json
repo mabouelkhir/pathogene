@@ -1,0 +1,84 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024230858",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "medecin",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numEmp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "expertLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "photo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nbrPatients",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rating",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Medecin",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "classification",
+      "otherEntityRelationshipName": "medecin",
+      "relationshipName": "classification",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "rendezVous",
+      "otherEntityRelationshipName": "medecin",
+      "relationshipName": "rendezVous",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "secretaire",
+      "otherEntityRelationshipName": "medecin",
+      "relationshipName": "secretaire",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

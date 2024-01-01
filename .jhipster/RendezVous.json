@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024230900",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "rendez_vous",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "RendezVous",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "visite",
+      "otherEntityRelationshipName": "rendezVous",
+      "ownerSide": false,
+      "relationshipName": "visite",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "rendezVous",
+      "relationshipName": "patient",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "medecin",
+      "otherEntityRelationshipName": "rendezVous",
+      "relationshipName": "medecin",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,168 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="admin (generated)" id="1702742543939-1">
+        <dropForeignKeyConstraint baseTableName="detection" constraintName="FKpoo05vsax3c3mw1pfcicedsdn"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-2">
+        <dropForeignKeyConstraint baseTableName="compte" constraintName="FKqarx3cy1ibomkd3y9owi298d4"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-3">
+        <dropForeignKeyConstraint baseTableName="jhi_user_authority" constraintName="fk_authority_name"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-4">
+        <dropForeignKeyConstraint baseTableName="classification" constraintName="fk_classification__medecin_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-5">
+        <dropForeignKeyConstraint baseTableName="classification" constraintName="fk_classification__stade_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-6">
+        <dropForeignKeyConstraint baseTableName="classification" constraintName="fk_classification__unclassified_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-7">
+        <dropForeignKeyConstraint baseTableName="image" constraintName="fk_image__stade_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-8">
+        <dropForeignKeyConstraint baseTableName="medecin" constraintName="fk_medecin__secretaire_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-9">
+        <dropForeignKeyConstraint baseTableName="medecin" constraintName="fk_medecin__user_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-10">
+        <dropForeignKeyConstraint baseTableName="patient" constraintName="fk_patient__secretaire_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-11">
+        <dropForeignKeyConstraint baseTableName="patient" constraintName="fk_patient__stade_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-12">
+        <dropForeignKeyConstraint baseTableName="patient" constraintName="fk_patient__user_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-13">
+        <dropForeignKeyConstraint baseTableName="rendez_vous" constraintName="fk_rendez_vous__medecin_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-14">
+        <dropForeignKeyConstraint baseTableName="rendez_vous" constraintName="fk_rendez_vous__patient_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-15">
+        <dropForeignKeyConstraint baseTableName="secretaire" constraintName="fk_secretaire__user_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-16">
+        <dropForeignKeyConstraint baseTableName="stade" constraintName="fk_stade__maladie_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-17">
+        <dropForeignKeyConstraint baseTableName="unclassified" constraintName="fk_unclassified__maladie_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-18">
+        <dropForeignKeyConstraint baseTableName="jhi_user_authority" constraintName="fk_user_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-19">
+        <dropForeignKeyConstraint baseTableName="visite" constraintName="fk_visite__detection_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-20">
+        <dropForeignKeyConstraint baseTableName="visite" constraintName="fk_visite__rendez_vous_id"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-21">
+        <dropUniqueConstraint constraintName="UC_COMPTEUSER_ID_COL" tableName="compte"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-22">
+        <dropUniqueConstraint constraintName="ux_classification__code" tableName="classification"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-23">
+        <dropUniqueConstraint constraintName="ux_detection__code" tableName="detection"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-24">
+        <dropUniqueConstraint constraintName="ux_image__code" tableName="image"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-25">
+        <dropUniqueConstraint constraintName="ux_maladie__code" tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-26">
+        <dropUniqueConstraint constraintName="ux_maladie__nom" tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-27">
+        <dropUniqueConstraint constraintName="ux_medecin__code" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-28">
+        <dropUniqueConstraint constraintName="ux_medecin__user_id" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-29">
+        <dropUniqueConstraint constraintName="ux_patient__code" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-30">
+        <dropUniqueConstraint constraintName="ux_patient__user_id" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-31">
+        <dropUniqueConstraint constraintName="ux_rendez_vous__code" tableName="rendez_vous"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-32">
+        <dropUniqueConstraint constraintName="ux_secretaire__code" tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-33">
+        <dropUniqueConstraint constraintName="ux_secretaire__user_id" tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-34">
+        <dropUniqueConstraint constraintName="ux_stade__code" tableName="stade"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-35">
+        <dropUniqueConstraint constraintName="ux_unclassified__code" tableName="unclassified"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-36">
+        <dropUniqueConstraint constraintName="ux_user_email" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-37">
+        <dropUniqueConstraint constraintName="ux_user_login" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-38">
+        <dropUniqueConstraint constraintName="ux_visite__code" tableName="visite"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-39">
+        <dropUniqueConstraint constraintName="ux_visite__detection_id" tableName="visite"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-40">
+        <dropUniqueConstraint constraintName="ux_visite__rendez_vous_id" tableName="visite"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-41">
+        <dropTable tableName="classification"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-42">
+        <dropTable tableName="compte"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-43">
+        <dropTable tableName="detection"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-44">
+        <dropTable tableName="image"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-45">
+        <dropTable tableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-46">
+        <dropTable tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-47">
+        <dropTable tableName="jhi_user_authority"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-48">
+        <dropTable tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-49">
+        <dropTable tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-50">
+        <dropTable tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-51">
+        <dropTable tableName="rendez_vous"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-52">
+        <dropTable tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-53">
+        <dropTable tableName="stade"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-54">
+        <dropTable tableName="unclassified"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702742543939-55">
+        <dropTable tableName="visite"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024230903",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "unclassified",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "photo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Unclassified",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "classification",
+      "otherEntityRelationshipName": "unclassified",
+      "relationshipName": "classification",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "maladie",
+      "otherEntityRelationshipName": "unclassified",
+      "relationshipName": "maladie",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

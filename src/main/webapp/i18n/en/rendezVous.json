@@ -1,0 +1,29 @@
+{
+  "pathogeneApp": {
+    "rendezVous": {
+      "home": {
+        "title": "Appointments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Appointment",
+        "createOrEditLabel": "Create or edit an Appointment",
+        "notFound": "No Appointments found"
+      },
+      "created": "A new Appointment is created with identifier {{ param }}",
+      "updated": "An Appointment is updated with identifier {{ param }}",
+      "deleted": "An Appointment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Appointment {{ id }}?"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "id": "ID",
+      "date": "Date",
+      "code": "Code",
+      "status": "Status",
+      "visite": "Visit",
+      "patient": "Patient",
+      "medecin": "Doctor"
+    }
+  }
+}

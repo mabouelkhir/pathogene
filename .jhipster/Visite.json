@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024230904",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "visite",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Visite",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "rendezVous",
+      "otherEntityRelationshipName": "visite",
+      "ownerSide": true,
+      "relationshipName": "rendezVous",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "detection",
+      "otherEntityRelationshipName": "visite",
+      "ownerSide": true,
+      "relationshipName": "detection",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

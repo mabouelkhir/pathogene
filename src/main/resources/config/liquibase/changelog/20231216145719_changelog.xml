@@ -1,0 +1,173 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="admin (generated)" id="1702738722235-52">
+        <createTable tableName="model_class_names">
+            <column name="maladie_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="class_name" type="VARCHAR(255)"/>
+            <column name="class_number" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-53">
+        <addForeignKeyConstraint baseColumnNames="maladie_id" baseTableName="detection" constraintName="FK9nfo5sg1b051su8sunpjl6h2l" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="maladie" validate="true"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-54">
+        <addForeignKeyConstraint baseColumnNames="maladie_id" baseTableName="model_class_names" constraintName="FKpqjh13vwycxvjthf79tc5pfrg" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="maladie" validate="true"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-1">
+        <dropDefaultValue columnDataType="varchar(20)" columnName="activation_key" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-2">
+        <dropDefaultValue columnDataType="boolean" columnName="admin" tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-3">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="adresse" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-4">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="classification"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-5">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="detection"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-6">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="image"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-7">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-8">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-9">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-10">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="rendez_vous"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-11">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-12">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="stade"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-13">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="unclassified"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-14">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="code" tableName="visite"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-15">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="description" tableName="detection"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-16">
+        <dropDefaultValue columnDataType="clob" columnName="description" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-17">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="description" tableName="stade"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-18">
+        <dropDefaultValue columnDataType="varchar(254)" columnName="email" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-19">
+        <dropDefaultValue columnDataType="varchar(50)" columnName="first_name" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-20">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="genre" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-21">
+        <dropDefaultValue columnDataType="bigint" columnName="image_height" tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-22">
+        <dropDefaultValue columnDataType="varchar(256)" columnName="image_url" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-23">
+        <dropDefaultValue columnDataType="bigint" columnName="image_width" tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-24">
+        <dropDefaultValue columnDataType="varchar(10)" columnName="lang_key" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-25">
+        <dropDefaultValue columnDataType="varchar(50)" columnName="last_modified_by" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-26">
+        <dropDefaultValue columnDataType="varchar(50)" columnName="last_name" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-27">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="level" tableName="stade"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-28">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="model_file_name" tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-29">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="modele_content_type" tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-30">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="nom" tableName="maladie"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-31">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="nom" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-32">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="nom" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-33">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="nom" tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-34">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="num_emp" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-35">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="num_emp" tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-36">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="photo_content_type" tableName="detection"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-37">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="photo_content_type" tableName="image"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-38">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="photo_content_type" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-39">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="photo_content_type" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-40">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="photo_content_type" tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-41">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="photo_content_type" tableName="unclassified"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-42">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="prenom" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-43">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="prenom" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-44">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="prenom" tableName="secretaire"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-45">
+        <dropDefaultValue columnDataType="varchar(20)" columnName="reset_key" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-46">
+        <dropDefaultValue columnDataType="boolean" columnName="score" tableName="classification"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-47">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="stade" tableName="detection"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-48">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="status" tableName="rendez_vous"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-49">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="telephone" tableName="patient"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-50">
+        <dropDefaultValue columnDataType="varchar(255)" columnName="type" tableName="medecin"/>
+    </changeSet>
+    <changeSet author="admin (generated)" id="1702738722235-51">
+        <dropDefaultValue columnDataType="boolean" columnName="validation" tableName="detection"/>
+    </changeSet>
+</databaseChangeLog>

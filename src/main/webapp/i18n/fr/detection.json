@@ -1,0 +1,32 @@
+{
+  "pathogeneApp": {
+    "detection": {
+      "home": {
+        "title": "Detections",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Detection",
+        "createOrEditLabel": "Créer ou éditer un Detection",
+        "notFound": "Aucun Detection trouvé"
+      },
+      "created": "Un nouveau Detection a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Detection avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Detection avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Detection {{ id }} ?"
+      },
+      "detail": {
+        "title": "Detection"
+      },
+      "id": "ID",
+      "photo": "Photo",
+      "code": "Code",
+      "validation": "Validation",
+      "stade": "Stade",
+      "date": "Date",
+      "description": "Description",
+      "visite": "Visite",
+      "maladie": "Maladie",
+      "patient": "Patient"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "pathogeneApp": {
+    "patient": {
+      "home": {
+        "title": "Patients",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Patient",
+        "createOrEditLabel": "Créer ou éditer un Patient",
+        "notFound": "Aucun Patient trouvé"
+      },
+      "created": "Un nouveau Patient a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Patient avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Patient avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Patient {{ id }} ?"
+      },
+      "detail": {
+        "title": "Patient"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "dateNaissance": "Date Naissance",
+      "adresse": "Adresse",
+      "genre": "Genre",
+      "telephone": "Telephone",
+      "taille": "Taille",
+      "poids": "Poids",
+      "photo": "Photo",
+      "user": "User",
+      "rendezVous": "Rendez Vous",
+      "detection": "Detection",
+      "secretaire": "Secretaire",
+      "stade": "Stade"
+    }
+  }
+}

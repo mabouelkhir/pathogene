@@ -1,0 +1,27 @@
+{
+  "pathogeneApp": {
+    "unclassified": {
+      "home": {
+        "title": "Unclassifieds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Unclassified",
+        "createOrEditLabel": "Create or edit a Unclassified",
+        "notFound": "No Unclassifieds found"
+      },
+      "created": "A new Unclassified is created with identifier {{ param }}",
+      "updated": "A Unclassified is updated with identifier {{ param }}",
+      "deleted": "A Unclassified is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Unclassified {{ id }}?"
+      },
+      "detail": {
+        "title": "Unclassified"
+      },
+      "id": "ID",
+      "code": "Code",
+      "photo": "Photo",
+      "classification": "Classification",
+      "maladie": "Disease"
+    }
+  }
+}

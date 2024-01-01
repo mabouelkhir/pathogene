@@ -1,0 +1,8 @@
+{
+  "generator-jhipster:7.9.4": {
+    "promptValues": {
+      "packageName": "emsi.iir4.pathogene",
+      "nativeLanguage": "en"
+    }
+  }
+}

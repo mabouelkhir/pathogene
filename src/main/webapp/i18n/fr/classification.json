@@ -1,0 +1,28 @@
+{
+  "pathogeneApp": {
+    "classification": {
+      "home": {
+        "title": "Classifications",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Classification",
+        "createOrEditLabel": "Créer ou éditer un Classification",
+        "notFound": "Aucun Classification trouvé"
+      },
+      "created": "Un nouveau Classification a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Classification avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Classification avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Classification {{ id }} ?"
+      },
+      "detail": {
+        "title": "Classification"
+      },
+      "id": "ID",
+      "code": "Code",
+      "score": "Score",
+      "medecin": "Medecin",
+      "stade": "Stade",
+      "unclassified": "Unclassified"
+    }
+  }
+}

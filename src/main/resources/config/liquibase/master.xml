@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="floatType" value="float" dbms="mysql"/>
+    <property name="clobType" value="clob" dbms="mysql"/>
+    <property name="blobType" value="longblob" dbms="mysql"/>
+    <property name="uuidType" value="varchar(36)" dbms="mysql"/>
+    <property name="datetimeType" value="datetime(6)" dbms="mysql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230853_added_entity_Classification.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230854_added_entity_Compte.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230855_added_entity_Detection.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230856_added_entity_Image.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230857_added_entity_Maladie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230858_added_entity_Medecin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230859_added_entity_Patient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230900_added_entity_RendezVous.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230901_added_entity_Secretaire.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230902_added_entity_Stade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230903_added_entity_Unclassified.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230904_added_entity_Visite.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20231024230853_added_entity_constraints_Classification.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230854_added_entity_constraints_Compte.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230855_added_entity_constraints_Detection.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230856_added_entity_constraints_Image.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230858_added_entity_constraints_Medecin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230859_added_entity_constraints_Patient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230900_added_entity_constraints_RendezVous.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230901_added_entity_constraints_Secretaire.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230902_added_entity_constraints_Stade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230903_added_entity_constraints_Unclassified.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231024230904_added_entity_constraints_Visite.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <include file="config/liquibase/changelog/20231216163652_changelog.xml" relativeToChangelogFile="false"/>
+
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

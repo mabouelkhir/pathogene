@@ -1,0 +1,37 @@
+{
+  "pathogeneApp": {
+    "medecin": {
+      "home": {
+        "title": "Medecins",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Medecin",
+        "createOrEditLabel": "Créer ou éditer un Medecin",
+        "notFound": "Aucun Medecin trouvé"
+      },
+      "created": "Un nouveau Medecin a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Medecin avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Medecin avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Medecin {{ id }} ?"
+      },
+      "detail": {
+        "title": "Medecin"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nom": "Nom",
+      "numEmp": "Num Emp",
+      "prenom": "Prenom",
+      "expertLevel": "Expert Level",
+      "photo": "Photo",
+      "type": "Type",
+      "nbrPatients": "Nbr Patients",
+      "rating": "Rating",
+      "description": "Description",
+      "user": "User",
+      "classification": "Classification",
+      "rendezVous": "Rendez Vous",
+      "secretaire": "Secretaire"
+    }
+  }
+}

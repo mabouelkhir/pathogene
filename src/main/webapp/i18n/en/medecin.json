@@ -1,0 +1,37 @@
+{
+  "pathogeneApp": {
+    "medecin": {
+      "home": {
+        "title": "Doctors",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Doctor",
+        "createOrEditLabel": "Create or edit a Doctor",
+        "notFound": "No Doctors found"
+      },
+      "created": "A new Doctor is created with identifier {{ param }}",
+      "updated": "A Doctor is updated with identifier {{ param }}",
+      "deleted": "A Doctor is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Doctor {{ id }}?"
+      },
+      "detail": {
+        "title": "Doctor"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nom": "Last Name",
+      "numEmp": "Employee Number",
+      "prenom": "First Name",
+      "expertLevel": "Expert Level",
+      "photo": "Photo",
+      "type": "Type",
+      "nbrPatients": "Number of Patients",
+      "rating": "Rating",
+      "description": "Description",
+      "user": "User",
+      "classification": "Classification",
+      "rendezVous": "Appointments",
+      "secretaire": "Secretary"
+    }
+  }
+}

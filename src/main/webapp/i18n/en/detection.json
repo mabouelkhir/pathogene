@@ -1,0 +1,32 @@
+{
+  "pathogeneApp": {
+    "detection": {
+      "home": {
+        "title": "Detections",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Detection",
+        "createOrEditLabel": "Create or edit a Detection",
+        "notFound": "No Detections found"
+      },
+      "created": "A new Detection is created with identifier {{ param }}",
+      "updated": "A Detection is updated with identifier {{ param }}",
+      "deleted": "A Detection is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Detection {{ id }}?"
+      },
+      "detail": {
+        "title": "Detection"
+      },
+      "id": "ID",
+      "photo": "Photo",
+      "code": "Code",
+      "validation": "Validation",
+      "stade": "Stage",
+      "date": "Date",
+      "description": "Description",
+      "visite": "Visit",
+      "maladie": "Disease",
+      "patient": "Patient"
+    }
+  }
+}
