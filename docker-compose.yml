@@ -19,7 +19,6 @@ services:
   pathogene-mysql:
     image: mysql:8.0.30
     # volumes:
-    #
     #   - ~/volumes/jhipster/pathogene/mysql/:/var/lib/mysql/
     volumes:
       - ./config/mysql:/etc/mysql/conf.d
