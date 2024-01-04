@@ -76,16 +76,6 @@
                       <span class="d-none d-md-inline" v-text="$t('entity.action.view')">View</span>
                     </button>
                   </router-link>
-                  <b-button
-                    v-on:click="prepareStade(patient)"
-                    variant="dark"
-                    class="btn btn-sm"
-                    data-cy="entityStadeButton"
-                    v-b-modal.stadeEntity
-                  >
-                    <font-awesome-icon icon="plus"></font-awesome-icon>
-                    <span class="d-none d-md-inline">Stage</span>
-                  </b-button>
                 </div>
               </td>
             </tr>
