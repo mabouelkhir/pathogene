@@ -29,4 +29,4 @@ spec:
     # Adjust ports and protocols as needed for Python service
     - protocol: TCP
       port: 80
-      targetPort:8083
+      targetPort: 8083
