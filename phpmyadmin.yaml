@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin
+spec:
+  replicas: 1 # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+        - name: phpmyadmin
+          image: phpmyadmin/phpmyadmin
+          env:
+            - name: PMA_ARBITRARY
+              value: "1"
+            - name: PMA_HOST
+              value: "pathogene-mysql"
+            - name: PMA_USER
+              value: "root"
+            - name: PMA_PASSWORD
+              value: ""
+          ports:
+            - containerPort: 80
+              name: phpmyadmin
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin-service
+spec:
+  selector:
+    app: phpmyadmin
+  ports:
+    # Adjust ports and protocols as needed for phpMyAdmin service
+    - protocol: TCP
+      port: 8081
+      targetPort: 80
