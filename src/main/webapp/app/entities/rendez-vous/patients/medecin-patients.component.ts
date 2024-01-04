@@ -48,7 +48,6 @@ export default class MedecinPatients extends mixins(JhiDataUtils) {
 
   public mounted(): void {
     this.retrieveAllPatients();
-    this.retrieveAllMaladies();
     this.retrieveAllStades();
   }
 
@@ -116,25 +115,7 @@ export default class MedecinPatients extends mixins(JhiDataUtils) {
   public transition(): void {
     this.retrieveAllPatients();
   }
-
-  public async retrieveAllMaladies() {
-    this.isFetching = true;
-    try {
-      const response = await this.maladieService().retrieve({
-        page: this.page - 1,
-        size: this.itemsPerPage,
-        sort: this.sort(),
-      });
-      this.isFetching = false;
-      this.maladies = response.data;
-      this.totalItems = Number(response.headers['x-total-count']);
-      this.queryCount = this.totalItems;
-    } catch (e) {
-      console.log(e);
-      this.isFetching = false;
-    }
-  }
-
+  
 
   public prepareStade(instance: IPatient): void {
     this.patient = instance;
