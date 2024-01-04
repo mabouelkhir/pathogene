@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pathogene-mysql
+spec:
+  replicas: 1 # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: pathogene-mysql
+  template:
+    metadata:
+      labels:
+        app: pathogene-mysql
+    spec:
+      containers:
+        - name: pathogene-mysql
+          image: mysql:8.0.30
+          env:
+            - name: MYSQL_ALLOW_EMPTY_PASSWORD
+              value: "yes"
+            - name: MYSQL_DATABASE
+              value: "pathogene"
+          ports:
+            - containerPort: 3306
+              name: mysql
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pathogene-mysql-service
+spec:
+  selector:
+    app: pathogene-mysql
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
