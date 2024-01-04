@@ -27,9 +27,8 @@
           <table class="table table-striped" aria-describedby="detections">
             <thead>
               <tr>
-                <th scope="row" v-on:click="changeOrder('photo')">
+                <th scope="row">
                   <span v-text="$t('pathogeneApp.detection.photo')">Photo</span>
-                  <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'photo'"></jhi-sort-indicator>
                 </th>
                 <th scope="row" v-on:click="changeOrder('validation')">
                   <span v-text="$t('pathogeneApp.detection.validation')">Validation</span>
@@ -39,9 +38,11 @@
                   <span v-text="$t('pathogeneApp.detection.stade')">Stage</span>
                   <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'stade'"></jhi-sort-indicator>
                 </th>
-                <th scope="row" v-on:click="changeOrder('description')">
+                <th scope="row">
                   <span v-text="$t('pathogeneApp.detection.description')">Description</span>
-                  <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'description'"></jhi-sort-indicator>
+                </th>
+                <th scope="row">
+                  <span v-text="$t('pathogeneApp.detection.date')">Date</span>
                 </th>
                 <th scope="row" v-on:click="changeOrder('maladie.id')">
                   <span v-text="$t('pathogeneApp.detection.maladie')">Disease </span>
@@ -68,6 +69,7 @@
                 <td>{{ detection.validation }}</td>
                 <td>{{ detection.stade }}</td>
                 <td>{{ detection.description }}</td>
+                <td>{{ detection.date | formatDate }}</td>
                 <td>
                   <div v-if="detection.maladie">
                     {{ detection.maladie.nom }}
@@ -95,6 +97,7 @@
                         <span class="d-none d-md-inline" v-text="$t('entity.action.edit')">Edit</span>
                       </button>
                     </router-link>
+                    <!--
                     <b-button
                       v-on:click="prepareRemove(detection)"
                       variant="danger"
@@ -106,6 +109,7 @@
                       <font-awesome-icon icon="times"></font-awesome-icon>
                       <span class="d-none d-md-inline" v-text="$t('entity.action.delete')">Delete</span>
                     </b-button>
+                    -->
                   </div>
                 </td>
               </tr>
