@@ -1,18 +1,36 @@
 import { Component, Vue, Inject, Watch } from 'vue-property-decorator';
 import Vue2Filters from 'vue2-filters';
 import { IVisite } from '@/shared/model/visite.model';
-
 import VisiteService from './visite.service';
 import AlertService from '@/shared/alert/alert.service';
 import AccountService from '@/account/account.service';
+import DetectionService from "@/entities/detection/detection.service";
+import {Detection, IDetection} from "@/shared/model/detection.model";
+import MaladieService from "@/entities/maladie/maladie.service";
+import {IMaladie, Maladie} from "@/shared/model/maladie.model";
+import {IPatient} from "@/shared/model/patient.model";
+import {mixins} from "vue-class-component";
+import JhiDataUtils from "@/shared/data/data-utils.service";
 
+const validations: any = {
+  detection: {
+    photo: {},
+    validation: {},
+    stade: {},
+  },
+};
 @Component({
   mixins: [Vue2Filters.mixin],
+  validations,
 })
-export default class Visite extends Vue {
+export default class Visite extends mixins(JhiDataUtils) {
   @Inject('visiteService') private visiteService: () => VisiteService;
   @Inject('alertService') private alertService: () => AlertService;
   @Inject('accountService') private accountService: () => AccountService;
+  @Inject('detectionService') private detectionService: () => DetectionService;
+  @Inject('maladieService') private maladieService: () => MaladieService;
+
+
 
   private removeId: number = null;
   public itemsPerPage = 20;
@@ -22,7 +40,13 @@ export default class Visite extends Vue {
   public propOrder = 'id';
   public reverse = false;
   public totalItems = 0;
-
+  private detection: IDetection = new Detection();
+  private maladies: IMaladie[] = [];
+  public patient: IPatient;
+  private maladie: IMaladie = new Maladie();
+  private idMaladie: number = null;
+  private visite: IVisite;
+  private idVisite: number = null;
   public visites: IVisite[] = [];
   public allVisites: IVisite[] = [];
 
@@ -35,7 +59,10 @@ export default class Visite extends Vue {
       this.retrieveAllVisites();
     } else if (this.isPatient()) {
       this.retrieveAllVisitesForPatient();
-    } else this.retrieveAllVisitesForMedecin();
+    } else {
+      this.retrieveAllVisitesForMedecin();
+      this.retrieveAllMaladies();
+    }
   }
 
   public clear(): void {
@@ -115,6 +142,59 @@ export default class Visite extends Vue {
       );
   }
 
+  public async retrieveAllMaladies() {
+    this.isFetching = true;
+    try {
+      const response = await this.maladieService().retrieve({
+        page: this.page - 1,
+        size: this.itemsPerPage,
+        sort: this.sort(),
+      });
+      this.isFetching = false;
+      this.maladies = response.data;
+      this.totalItems = Number(response.headers['x-total-count']);
+      this.queryCount = this.totalItems;
+    } catch (e) {
+      console.log(e);
+      this.isFetching = false;
+    }
+  }
+
+  public async prepareDetection(instance: IVisite) {
+    this.patient = instance.rendezVous.patient;
+    this.visite = instance;
+    this.idVisite =instance.id;
+    if (<any>this.$refs.detectionEntity) {
+      (<any>this.$refs.detectionEntity).show();
+    }
+  }
+
+  public async saveDetection() {
+    this.detection.date = new Date();
+    this.detection.patient = this.patient;
+    this.maladie = await this.maladieService().find(this.idMaladie);
+    this.detection.maladie = this.maladie;
+    const response = await this.detectionService().create(this.detection);
+    this.detection = response;
+
+    (this.$root as any).$bvToast.toast('A detection is created', {
+      toaster: 'b-toaster-top-center',
+      title: 'Info',
+      variant: 'info',
+      solid: true,
+      autoHideDelay: 5000,
+    });
+    this.closeDialog();
+    if (<any>this.$refs.afficheEntity) {
+      (<any>this.$refs.afficheEntity).show();
+    }
+    this.visite.detection = this.detection;
+    await this.visiteService().update(this.visite);
+    this.detection = null;
+  }
+
+
+
   public handleSyncList(): void {
     this.clear();
   }
@@ -173,6 +253,8 @@ export default class Visite extends Vue {
   }
 
   public closeDialog(): void {
+    (<any>this.$refs.detectionEntity).hide();
+    (<any>this.$refs.afficheEntity).hide();
     (<any>this.$refs.removeEntity).hide();
   }
 
