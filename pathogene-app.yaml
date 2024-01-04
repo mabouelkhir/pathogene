@@ -15,19 +15,6 @@ spec:
       containers:
         - name: pathogene-app
           image: mabouelkhir/pathogene11:latest
-          env:
-            - name: _JAVA_OPTIONS
-              value: "-Xmx512m -Xms256m"
-            - name: SPRING_PROFILES_ACTIVE
-              value: "prod,api-docs"
-            - name: MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED
-              value: "true"
-            - name: SPRING_DATASOURCE_URL
-              value: "jdbc:mysql://pathogene-mysql:3306/pathogene?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true"
-            - name: SPRING_LIQUIBASE_URL
-              value: "jdbc:mysql://pathogene-mysql:3306/pathogene?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true"
-            - name: JHIPSTER_SLEEP
-              value: "30"
           ports:
             - containerPort: 8080
 
