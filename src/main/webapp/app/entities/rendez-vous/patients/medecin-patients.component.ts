@@ -4,11 +4,8 @@ import Vue2Filters from 'vue2-filters';
 import JhiDataUtils from '@/shared/data/data-utils.service';
 import AccountService from '@/account/account.service';
 import { IPatient } from '@/shared/model/patient.model';
-import { Detection, IDetection } from '@/shared/model/detection.model';
 import DetectionService from '@/entities/detection/detection.service';
-import { IVisite, Visite } from '@/shared/model/visite.model';
 import VisiteService from '@/entities/visite/visite.service';
-import { IMaladie, Maladie } from '@/shared/model/maladie.model';
 import MaladieService from '@/entities/maladie/maladie.service';
 import { IStade } from '@/shared/model/stade.model';
 import StadeService from '@/entities/stade/stade.service';
@@ -37,14 +34,7 @@ export default class MedecinPatients extends mixins(JhiDataUtils) {
   public patients: IPatient[] = [];
   public allPatients: IPatient[] = [];
   public patient: IPatient;
-  private detection: IDetection = new Detection();
-  private visites: IVisite[] = [];
-  private maladies: IMaladie[] = [];
   private stades: IStade[] = [];
-  private maladie: IMaladie = new Maladie();
-  private visite: IVisite;
-  private idVisite: number = null;
-  private idMaladie: number = null;
   public itemsPerPage = 20;
   public queryCount: number = null;
   public page = 1;
@@ -58,7 +48,6 @@ export default class MedecinPatients extends mixins(JhiDataUtils) {
 
   public mounted(): void {
     this.retrieveAllPatients();
-    this.retrieveAllVisites();
     this.retrieveAllMaladies();
     this.retrieveAllStades();
   }
@@ -128,24 +117,6 @@ export default class MedecinPatients extends mixins(JhiDataUtils) {
     this.retrieveAllPatients();
   }
 
-  public async retrieveAllVisites() {
-    this.isFetching = true;
-    try {
-      const response = await this.accountService().retrieveAllVisites({
-        page: this.page - 1,
-        size: this.itemsPerPage,
-        sort: this.sort(),
-      });
-      this.isFetching = false;
-      this.visites = response.data;
-      this.totalItems = Number(response.headers['x-total-count']);
-      this.queryCount = this.totalItems;
-    } catch (e) {
-      console.log(e);
-      this.isFetching = false;
-    }
-  }
-
   public async retrieveAllMaladies() {
     this.isFetching = true;
     try {
@@ -164,41 +135,9 @@ export default class MedecinPatients extends mixins(JhiDataUtils) {
     }
   }
 
-  public async prepareDetection(instance: IPatient) {
-    this.patient = instance;
-    const visites = await this.visiteService().retrieveForMed(instance.id);
-    this.visites = visites.data;
-    if (<any>this.$refs.detectionEntity) {
-      (<any>this.$refs.detectionEntity).show();
-    }
-  }
 
   public prepareStade(instance: IPatient): void {
     this.patient = instance;
-  }
-
-  public async saveDetection() {
-    this.detection.date = new Date();
-    this.detection.patient = this.patient;
-    this.maladie = await this.maladieService().find(this.idMaladie);
-    this.detection.maladie = this.maladie;
-    const response = await this.detectionService().create(this.detection);
-    this.detection = response;
-
-    (this.$root as any).$bvToast.toast('A detection is created', {
-      toaster: 'b-toaster-top-center',
-      title: 'Info',
-      variant: 'info',
-      solid: true,
-      autoHideDelay: 5000,
-    });
-    this.closeDialog();
-    if (<any>this.$refs.afficheEntity) {
-      (<any>this.$refs.afficheEntity).show();
-    }
-    this.visite = await this.visiteService().find(this.idVisite);
-    this.visite.detection = this.detection;
-    await this.visiteService().update(this.visite);
   }
 
   public async saveStade(instance: IStade) {
@@ -219,8 +158,6 @@ export default class MedecinPatients extends mixins(JhiDataUtils) {
   }
 
   public closeDialog(): void {
-    (<any>this.$refs.detectionEntity).hide();
-    (<any>this.$refs.afficheEntity).hide();
     (<any>this.$refs.stadeEntity).hide();
   }
 
