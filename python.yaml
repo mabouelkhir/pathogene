@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python
+spec:
+  replicas: 1 # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+        - name: python
+          image: mabouelkhir/pathogene11:pythonlast
+          # Add other configurations for Python container if required
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-service
+spec:
+  selector:
+    app: python
+  ports:
+    # Adjust ports and protocols as needed for Python service
+    - protocol: TCP
+      port: 80
+      targetPort:8083
