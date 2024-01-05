@@ -21,7 +21,6 @@ services:
   pathogene-mysql:
     image: mysql:8.0.30
     # volumes:
-        # volumes:
 
     #   - ~/volumes/jhipster/pathogene/mysql/:/var/lib/mysql/
     volumes:
